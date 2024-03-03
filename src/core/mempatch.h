@@ -17,66 +17,42 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "mempatch.h"
-#include "tier0/dbg.h"
-#include "tier1/strtools.h"
+#pragma once
 
-#include "tier0/memdbgon.h"
-
-#include "utils/plat.h"
+#include "platform.h"
 #include "core/memory_module.h"
-#include "core/log.h"
+#include "core/gameconfig.h"
 
 namespace counterstrikesharp {
 using namespace modules;
 
-bool CMemPatch::PerformPatch(CGameConfig* gameConfig)
+class CMemPatch
 {
-    if (!m_pPatchAddress)
-	{
-		m_pPatchAddress = gameConfig->ResolveSignature(m_pSignatureName.c_str());
-	}
-
-    if (!m_pPatchAddress)
+  public:
+    CMemPatch(const char* pSignatureName, const char* pszName)
+        : m_pSignatureName(pSignatureName), m_pszName(pszName)
     {
-        CSSHARP_CORE_ERROR("Failed to find patch address for '{}'", m_pSignatureName.c_str());
-        return false;
+        m_pModule = nullptr;
+        m_pPatchAddress = nullptr;
+        m_pOriginalBytes = nullptr;
+        m_pSignature = nullptr;
+        m_pPatch = nullptr;
+        m_iPatchLength = 0;
     }
 
-    const char* patch = gameConfig->GetPatch(m_pszName);
+    bool PerformPatch(CGameConfig* gameConfig);
+    void UndoPatch();
 
-    if (!patch)
-    {
-        CSSHARP_CORE_ERROR("Failed to find patch for '{}'", m_pszName);
-        return false;
-    }
+    void* GetPatchAddress() { return m_pPatchAddress; }
 
-    m_pPatch = gameConfig->HexToByte(patch, m_iPatchLength);
-
-    if (!m_pPatch)
-    {
-        CSSHARP_CORE_ERROR("Failed convert patch '{}' ({})", m_pszName, patch);
-        return false;
-    }
-
-    m_pOriginalBytes = new byte[m_iPatchLength];
-    V_memcpy(m_pOriginalBytes, m_pPatchAddress, m_iPatchLength);
-
-    Plat_WriteMemory(m_pPatchAddress, (byte*)m_pPatch, m_iPatchLength);
-
-    CSSHARP_CORE_INFO("Patched '{}' at '{}'", m_pszName, m_pPatchAddress);
-    return true;
-}
-
-void CMemPatch::UndoPatch()
-{
-    if (!m_pPatchAddress)
-        return;
-
-    CSSHARP_CORE_INFO("Undoing patch '{}' at '{}'", m_pszName, m_pPatchAddress);
-
-    Plat_WriteMemory(m_pPatchAddress, m_pOriginalBytes, m_iPatchLength);
-
-    delete[] m_pOriginalBytes;
-}
+  private:
+    CModule** m_pModule;
+    const byte* m_pSignature;
+    const byte* m_pPatch;
+    byte* m_pOriginalBytes;
+    std::string m_pSignatureName;
+    std::string m_pszName;
+    size_t m_iPatchLength;
+    void* m_pPatchAddress;
+};
 } // namespace counterstrikesharp
