@@ -98,8 +98,7 @@ const char* CGameConfig::GetPatch(const std::string& name)
     return it->second.c_str();
 }
 
-std::unordered_map<std::string, std::string> 
-CGameConfig::GetPatches()
+std::unordered_map<std::string, std::string> CGameConfig::GetPatches()
 {
     return m_umPatches;
 }
