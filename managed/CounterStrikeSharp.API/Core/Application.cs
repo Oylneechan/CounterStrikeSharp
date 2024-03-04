@@ -130,11 +130,11 @@ namespace CounterStrikeSharp.API.Core
                     {
                         var sb = new StringBuilder();
                         sb.AppendFormat("  [#{0}:{1}]: \"{2}\" ({3})", plugin.PluginId,
-                            plugin.State.ToString().ToUpper(), plugin.Plugin.ModuleName,
-                            plugin.Plugin.ModuleVersion);
-                        if (!string.IsNullOrEmpty(plugin.Plugin.ModuleAuthor))
+                            plugin.State.ToString().ToUpper(), plugin.Plugin?.ModuleName ?? "Unknown",
+                            plugin.Plugin?.ModuleVersion ?? "Unknown");
+                        if (!string.IsNullOrEmpty(plugin.Plugin?.ModuleAuthor))
                             sb.AppendFormat(" by {0}", plugin.Plugin.ModuleAuthor);
-                        if (!string.IsNullOrEmpty(plugin.Plugin.ModuleDescription))
+                        if (!string.IsNullOrEmpty(plugin.Plugin?.ModuleDescription))
                         {
                             sb.Append("\n");
                             sb.Append("    ");
@@ -175,6 +175,8 @@ namespace CounterStrikeSharp.API.Core
                         try
                         {
                             _pluginManager.LoadPlugin(path);
+                            plugin = _pluginContextQueryHandler.FindPluginByModulePath(path);
+                            plugin.Plugin.OnAllPluginsLoaded(false);
                         }
                         catch (Exception e)
                         {
@@ -185,6 +187,7 @@ namespace CounterStrikeSharp.API.Core
                     else
                     {
                         plugin.Load(false);
+                        plugin.Plugin.OnAllPluginsLoaded(false);
                     }
 
                     break;
@@ -233,6 +236,7 @@ namespace CounterStrikeSharp.API.Core
 
                     plugin.Unload(true);
                     plugin.Load(true);
+                    plugin.Plugin.OnAllPluginsLoaded(true);
                     break;
                 }
 
