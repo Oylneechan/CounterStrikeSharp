@@ -192,6 +192,11 @@ void* GetPatchAddress(ScriptContext& scriptContext)
 {
     auto patchName = scriptContext.GetArgument<const char*>(0);
     return globals::memoryManager.GetPatchAddress(patchName);
+void RemoveAllNetworkVectorElements(ScriptContext& script_context)
+{
+    auto vec = script_context.GetArgument<CUtlVector<CEntityHandle>*>(0);
+
+    vec->RemoveAll();
 }
 
 REGISTER_NATIVES(memory, {
@@ -207,5 +212,6 @@ REGISTER_NATIVES(memory, {
     ScriptEngine::RegisterNativeHandler("CREATE_MEMORY_PATCH", CreateMemoryPatch);
     ScriptEngine::RegisterNativeHandler("UNDO_MEMORY_PATCH", UndoMemoryPatch);
     ScriptEngine::RegisterNativeHandler("GET_PATCH_ADDRESS", GetPatchAddress);
+    ScriptEngine::RegisterNativeHandler("REMOVE_ALL_NETWORK_VECTOR_ELEMENTS", RemoveAllNetworkVectorElements);
 })
 } // namespace counterstrikesharp

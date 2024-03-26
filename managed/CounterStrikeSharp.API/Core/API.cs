@@ -1114,6 +1114,14 @@ namespace CounterStrikeSharp.API.Core
 			ScriptContext.GlobalScriptContext.Push(signaturename);
 			ScriptContext.GlobalScriptContext.Push(removedata);
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xF451877A);
+			}
+		}
+
+        public static void RemoveAllNetworkVectorElements(IntPtr vec){
+			lock (ScriptContext.GlobalScriptContext.Lock) {
+			ScriptContext.GlobalScriptContext.Reset();
+			ScriptContext.GlobalScriptContext.Push(vec);
+			ScriptContext.GlobalScriptContext.SetIdentifier(0x67206C08);
 			ScriptContext.GlobalScriptContext.Invoke();
 			ScriptContext.GlobalScriptContext.CheckErrors();
 			}
