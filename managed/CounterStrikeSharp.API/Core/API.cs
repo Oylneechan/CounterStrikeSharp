@@ -5,9 +5,9 @@ using CounterStrikeSharp.API.Modules.Commands;
 
 namespace CounterStrikeSharp.API.Core
 {
-    public class NativeAPI {
-        
-        public static bool AddListener(string name, InputArgument callback){
+	public class NativeAPI {
+		
+		public static bool AddListener(string name, InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -19,7 +19,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool RemoveListener(string name, InputArgument callback){
+		public static bool RemoveListener(string name, InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -31,7 +31,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void AddCommand(string name, string description, bool serveronly, int flags, InputArgument callback){
+		public static void AddCommand(string name, string description, bool serveronly, int flags, InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -45,7 +45,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void RemoveCommand(string name, InputArgument callback){
+		public static void RemoveCommand(string name, InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -56,7 +56,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void AddCommandListener(string cmd, InputArgument callback, bool post){
+		public static void AddCommandListener(string cmd, InputArgument callback, bool post){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(cmd);
@@ -68,7 +68,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void RemoveCommandListener(string cmd, InputArgument callback, bool post){
+		public static void RemoveCommandListener(string cmd, InputArgument callback, bool post){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(cmd);
@@ -80,7 +80,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int CommandGetArgCount(IntPtr command){
+		public static int CommandGetArgCount(IntPtr command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -91,7 +91,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string CommandGetArgString(IntPtr command){
+		public static string CommandGetArgString(IntPtr command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -102,7 +102,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string CommandGetCommandString(IntPtr command){
+		public static string CommandGetCommandString(IntPtr command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -113,7 +113,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string CommandGetArgByIndex(IntPtr command, int index){
+		public static string CommandGetArgByIndex(IntPtr command, int index){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -125,7 +125,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static CommandCallingContext CommandGetCallingContext(IntPtr command){
+		public static CommandCallingContext CommandGetCallingContext(IntPtr command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -136,7 +136,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void IssueClientCommand(int slot, string command){
+		public static void IssueClientCommand(int slot, string command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(slot);
@@ -147,7 +147,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void IssueClientCommandFromServer(int slot, string command){
+		public static void IssueClientCommandFromServer(int slot, string command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(slot);
@@ -158,7 +158,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr FindConvar(string name){
+		public static IntPtr FindConvar(string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -169,7 +169,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetConvarStringValue(IntPtr convar, string value){
+		public static void SetConvarStringValue(IntPtr convar, string value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(convar);
@@ -180,7 +180,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetClientConvarValue(int clientindex, string convarname){
+		public static string GetClientConvarValue(int clientindex, string convarname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(clientindex);
@@ -192,7 +192,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetFakeClientConvarValue(int clientindex, string convarname, string convarvalue){
+		public static void SetFakeClientConvarValue(int clientindex, string convarname, string convarvalue){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(clientindex);
@@ -204,7 +204,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static T DynamicHookGetReturn<T>(IntPtr hook, int datatype){
+		public static T DynamicHookGetReturn<T>(IntPtr hook, int datatype){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(hook);
@@ -216,7 +216,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void DynamicHookSetReturn<T>(IntPtr hook, int datatype, T value){
+		public static void DynamicHookSetReturn<T>(IntPtr hook, int datatype, T value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(hook);
@@ -228,7 +228,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static T DynamicHookGetParam<T>(IntPtr hook, int datatype, int paramindex){
+		public static T DynamicHookGetParam<T>(IntPtr hook, int datatype, int paramindex){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(hook);
@@ -241,7 +241,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void DynamicHookSetParam<T>(IntPtr hook, int datatype, int paramindex, T value){
+		public static void DynamicHookSetParam<T>(IntPtr hook, int datatype, int paramindex, T value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(hook);
@@ -254,7 +254,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetMapName(){
+		public static string GetMapName(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x43C2ED68);
@@ -264,7 +264,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetGameDirectory(){
+		public static string GetGameDirectory(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xD8F03FD4);
@@ -274,7 +274,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool IsMapValid(string mapname){
+		public static bool IsMapValid(string mapname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(mapname);
@@ -285,7 +285,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float GetTickInterval(){
+		public static float GetTickInterval(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x970CB1B9);
@@ -295,7 +295,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float GetCurrentTime(){
+		public static float GetCurrentTime(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xFDF24F);
@@ -305,7 +305,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetTickCount(){
+		public static int GetTickCount(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xAB744EC5);
@@ -315,7 +315,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static double GetEngineTime(){
+		public static double GetEngineTime(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x39A17C88);
@@ -325,7 +325,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetMaxClients(){
+		public static int GetMaxClients(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x5DF2E20D);
@@ -335,7 +335,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void IssueServerCommand(string command){
+		public static void IssueServerCommand(string command){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(command);
@@ -345,7 +345,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void PrecacheModel(string name){
+		public static void PrecacheModel(string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -355,7 +355,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool PrecacheSound(string name, bool preload){
+		public static bool PrecacheSound(string name, bool preload){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -367,7 +367,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool IsSoundPrecached(string name){
+		public static bool IsSoundPrecached(string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -378,7 +378,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float GetSoundDuration(string name){
+		public static float GetSoundDuration(string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -389,7 +389,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateRay1(int rayType, IntPtr vec1, IntPtr vec2){
+		public static IntPtr CreateRay1(int rayType, IntPtr vec1, IntPtr vec2){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(rayType);
@@ -402,7 +402,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateRay2(IntPtr vec1, IntPtr vec2, IntPtr vec3, IntPtr vec4){
+		public static IntPtr CreateRay2(IntPtr vec1, IntPtr vec2, IntPtr vec3, IntPtr vec4){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vec1);
@@ -416,7 +416,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void TraceRay(IntPtr ray, IntPtr ptrace, IntPtr traceFilter, uint flags){
+		public static void TraceRay(IntPtr ray, IntPtr ptrace, IntPtr traceFilter, uint flags){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(ray);
@@ -429,7 +429,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr NewSimpleTraceFilter(int indexToIgnore){
+		public static IntPtr NewSimpleTraceFilter(int indexToIgnore){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(indexToIgnore);
@@ -440,7 +440,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr NewTraceFilterProxy(){
+		public static IntPtr NewTraceFilterProxy(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x881F122B);
@@ -450,7 +450,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void TraceFilterProxySetTraceTypeCallback(IntPtr traceFilter, IntPtr callback){
+		public static void TraceFilterProxySetTraceTypeCallback(IntPtr traceFilter, IntPtr callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(traceFilter);
@@ -461,7 +461,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void TraceFilterProxySetShouldHitEntityCallback(IntPtr traceFilter, IntPtr callback){
+		public static void TraceFilterProxySetShouldHitEntityCallback(IntPtr traceFilter, IntPtr callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(traceFilter);
@@ -472,7 +472,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr NewTraceResult(){
+		public static IntPtr NewTraceResult(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x95B04711);
@@ -482,7 +482,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static double GetTickedTime(){
+		public static double GetTickedTime(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x84108452);
@@ -492,7 +492,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void QueueTaskForNextFrame(InputArgument callback){
+		public static void QueueTaskForNextFrame(InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push((InputArgument)callback);
@@ -502,7 +502,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void QueueTaskForFrame(int tick, InputArgument callback){
+		public static void QueueTaskForFrame(int tick, InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(tick);
@@ -513,7 +513,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void QueueTaskForNextWorldUpdate(InputArgument callback){
+		public static void QueueTaskForNextWorldUpdate(InputArgument callback){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push((InputArgument)callback);
@@ -523,7 +523,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetValveInterface(int interfacetype, string interfacename){
+		public static IntPtr GetValveInterface(int interfacetype, string interfacename){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(interfacetype);
@@ -535,7 +535,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static T GetCommandParamValue<T>(string param, DataType datatype, T defaultvalue){
+		public static T GetCommandParamValue<T>(string param, DataType datatype, T defaultvalue){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(param);
@@ -548,7 +548,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void PrintToServerConsole(string msg){
+		public static void PrintToServerConsole(string msg){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(msg);
@@ -558,7 +558,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEntityFromIndex(int index){
+		public static IntPtr GetEntityFromIndex(int index){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(index);
@@ -569,7 +569,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetUseridFromIndex(int index){
+		public static int GetUseridFromIndex(int index){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(index);
@@ -580,7 +580,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetDesignerName(IntPtr pointer){
+		public static string GetDesignerName(IntPtr pointer){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(pointer);
@@ -591,7 +591,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEntityPointerFromHandle(IntPtr entityhandlepointer){
+		public static IntPtr GetEntityPointerFromHandle(IntPtr entityhandlepointer){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(entityhandlepointer);
@@ -602,7 +602,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static uint GetRefFromEntityPointer(IntPtr entitypointer){
+		public static uint GetRefFromEntityPointer(IntPtr entitypointer){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(entitypointer);
@@ -613,7 +613,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEntityPointerFromRef(uint entityref){
+		public static IntPtr GetEntityPointerFromRef(uint entityref){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(entityref);
@@ -624,7 +624,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetConcreteEntityListPointer(){
+		public static IntPtr GetConcreteEntityListPointer(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x5756DB36);
@@ -634,7 +634,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool IsRefValidEntity(uint entityref){
+		public static bool IsRefValidEntity(uint entityref){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(entityref);
@@ -645,7 +645,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void PrintToConsole(int index, string message){
+		public static void PrintToConsole(int index, string message){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(index);
@@ -656,7 +656,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetFirstActiveEntity(){
+		public static IntPtr GetFirstActiveEntity(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x3E50DC41);
@@ -666,7 +666,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static ulong GetPlayerAuthorizedSteamid(int slot){
+		public static ulong GetPlayerAuthorizedSteamid(int slot){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(slot);
@@ -677,7 +677,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetPlayerIpAddress(int slot){
+		public static string GetPlayerIpAddress(int slot){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(slot);
@@ -688,7 +688,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void HookEntityOutput(string classname, string outputname, InputArgument callback, HookMode mode){
+		public static void HookEntityOutput(string classname, string outputname, InputArgument callback, HookMode mode){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(classname);
@@ -701,7 +701,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void UnhookEntityOutput(string classname, string outputname, InputArgument callback, HookMode mode){
+		public static void UnhookEntityOutput(string classname, string outputname, InputArgument callback, HookMode mode){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(classname);
@@ -714,7 +714,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void HookEvent(string name, InputArgument callback, bool ispost){
+		public static void HookEvent(string name, InputArgument callback, bool ispost){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -726,7 +726,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void UnhookEvent(string name, InputArgument callback, bool ispost){
+		public static void UnhookEvent(string name, InputArgument callback, bool ispost){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -738,7 +738,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateEvent(string name, bool force){
+		public static IntPtr CreateEvent(string name, bool force){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(name);
@@ -750,7 +750,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void FreeEvent(IntPtr gameevent){
+		public static void FreeEvent(IntPtr gameevent){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -760,7 +760,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void FireEvent(IntPtr gameevent, bool dontbroadcast){
+		public static void FireEvent(IntPtr gameevent, bool dontbroadcast){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -771,7 +771,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void FireEventToClient(IntPtr gameevent, int clientindex){
+		public static void FireEventToClient(IntPtr gameevent, int clientindex){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -782,7 +782,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetEventName(IntPtr gameevent){
+		public static string GetEventName(IntPtr gameevent){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -793,7 +793,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool GetEventBool(IntPtr gameevent, string name){
+		public static bool GetEventBool(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -805,7 +805,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetEventInt(IntPtr gameevent, string name){
+		public static int GetEventInt(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -817,7 +817,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float GetEventFloat(IntPtr gameevent, string name){
+		public static float GetEventFloat(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -829,7 +829,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static string GetEventString(IntPtr gameevent, string name){
+		public static string GetEventString(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -841,7 +841,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventBool(IntPtr gameevent, string name, bool value){
+		public static void SetEventBool(IntPtr gameevent, string name, bool value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -853,7 +853,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventFloat(IntPtr gameevent, string name, float value){
+		public static void SetEventFloat(IntPtr gameevent, string name, float value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -865,7 +865,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventString(IntPtr gameevent, string name, string value){
+		public static void SetEventString(IntPtr gameevent, string name, string value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -877,7 +877,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventInt(IntPtr gameevent, string name, int value){
+		public static void SetEventInt(IntPtr gameevent, string name, int value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -889,7 +889,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int LoadEventsFromFile(string path, bool searchall){
+		public static int LoadEventsFromFile(string path, bool searchall){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(path);
@@ -901,7 +901,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEventPlayerController(IntPtr gameevent, string name){
+		public static IntPtr GetEventPlayerController(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -913,7 +913,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventPlayerController(IntPtr gameevent, string name, IntPtr value){
+		public static void SetEventPlayerController(IntPtr gameevent, string name, IntPtr value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -925,7 +925,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventEntity(IntPtr gameevent, string name, IntPtr value){
+		public static void SetEventEntity(IntPtr gameevent, string name, IntPtr value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -937,7 +937,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventEntityIndex(IntPtr gameevent, string name, int value){
+		public static void SetEventEntityIndex(IntPtr gameevent, string name, int value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -949,7 +949,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEventPlayerPawn(IntPtr gameevent, string name){
+		public static IntPtr GetEventPlayerPawn(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -961,7 +961,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static ulong GetEventUint64(IntPtr gameevent, string name){
+		public static ulong GetEventUint64(IntPtr gameevent, string name){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -973,7 +973,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetEventUint64(IntPtr gameevent, string name, ulong value){
+		public static void SetEventUint64(IntPtr gameevent, string name, ulong value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(gameevent);
@@ -985,7 +985,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateVirtualFunction(IntPtr pointer, int vtableoffset, int numarguments, int returntype, object[] arguments){
+		public static IntPtr CreateVirtualFunction(IntPtr pointer, int vtableoffset, int numarguments, int returntype, object[] arguments){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(pointer);
@@ -1003,7 +1003,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateVirtualFunctionBySignature(IntPtr pointer, string binaryname, string signature, int numarguments, int returntype, object[] arguments){
+		public static IntPtr CreateVirtualFunctionBySignature(IntPtr pointer, string binaryname, string signature, int numarguments, int returntype, object[] arguments){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(pointer);
@@ -1022,7 +1022,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void HookFunction(IntPtr function, InputArgument hook, bool post){
+		public static void HookFunction(IntPtr function, InputArgument hook, bool post){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(function);
@@ -1034,7 +1034,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void UnhookFunction(IntPtr function, InputArgument hook, bool post){
+		public static void UnhookFunction(IntPtr function, InputArgument hook, bool post){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(function);
@@ -1046,7 +1046,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static T ExecuteVirtualFunction<T>(IntPtr function, object[] arguments){
+		public static T ExecuteVirtualFunction<T>(IntPtr function, object[] arguments){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(function);
@@ -1061,7 +1061,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr FindSignature(string modulepath, string signature){
+		public static IntPtr FindSignature(string modulepath, string signature){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(modulepath);
@@ -1073,7 +1073,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetNetworkVectorSize(IntPtr vec){
+		public static int GetNetworkVectorSize(IntPtr vec){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vec);
@@ -1084,7 +1084,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetNetworkVectorElementAt(IntPtr vec, int index){
+		public static IntPtr GetNetworkVectorElementAt(IntPtr vec, int index){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vec);
@@ -1108,7 +1108,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void UndoMemoryPatch(string signaturename, bool removedata){
+		public static void UndoMemoryPatch(string signaturename, bool removedata){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(signaturename);
@@ -1117,7 +1117,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void RemoveAllNetworkVectorElements(IntPtr vec){
+		public static void RemoveAllNetworkVectorElements(IntPtr vec){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vec);
@@ -1127,7 +1127,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetPatchAddress(string signaturename){
+		public static IntPtr GetPatchAddress(string signaturename){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(signaturename);
@@ -1138,7 +1138,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static short GetSchemaOffset(string classname, string propname){
+		public static short GetSchemaOffset(string classname, string propname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(classname);
@@ -1150,7 +1150,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool IsSchemaFieldNetworked(string classname, string propname){
+		public static bool IsSchemaFieldNetworked(string classname, string propname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(classname);
@@ -1162,7 +1162,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static T GetSchemaValueByName<T>(IntPtr instance, int returntype, string classname, string propname){
+		public static T GetSchemaValueByName<T>(IntPtr instance, int returntype, string classname, string propname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(instance);
@@ -1176,7 +1176,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetSchemaValueByName<T>(IntPtr instance, int returntype, string classname, string propname, T value){
+		public static void SetSchemaValueByName<T>(IntPtr instance, int returntype, string classname, string propname, T value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(instance);
@@ -1190,7 +1190,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static int GetSchemaClassSize(string classname){
+		public static int GetSchemaClassSize(string classname){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(classname);
@@ -1201,7 +1201,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr GetEconItemSystem(){
+		public static IntPtr GetEconItemSystem(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x981E9B5B);
@@ -1211,7 +1211,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool IsServerPaused(){
+		public static bool IsServerPaused(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xB216AAAC);
@@ -1221,7 +1221,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr CreateTimer(float interval, InputArgument callback, int flags){
+		public static IntPtr CreateTimer(float interval, InputArgument callback, int flags){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(interval);
@@ -1234,7 +1234,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void KillTimer(IntPtr timer){
+		public static void KillTimer(IntPtr timer){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(timer);
@@ -1244,7 +1244,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr VectorNew(){
+		public static IntPtr VectorNew(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0xA67981DF);
@@ -1254,7 +1254,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static IntPtr AngleNew(){
+		public static IntPtr AngleNew(){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.SetIdentifier(0x11907167);
@@ -1264,7 +1264,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorGetX(IntPtr vector){
+		public static float VectorGetX(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1275,7 +1275,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorGetY(IntPtr vector){
+		public static float VectorGetY(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1286,7 +1286,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorGetZ(IntPtr vector){
+		public static float VectorGetZ(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1297,7 +1297,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void VectorSetX(IntPtr vector, float value){
+		public static void VectorSetX(IntPtr vector, float value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1308,7 +1308,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void VectorSetY(IntPtr vector, float value){
+		public static void VectorSetY(IntPtr vector, float value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1319,7 +1319,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void VectorSetZ(IntPtr vector, float value){
+		public static void VectorSetZ(IntPtr vector, float value){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1330,7 +1330,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void VectorAngles(IntPtr vector, IntPtr pseudoup, IntPtr outangle){
+		public static void VectorAngles(IntPtr vector, IntPtr pseudoup, IntPtr outangle){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1342,7 +1342,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void AngleVectors(IntPtr vector, IntPtr forwardout, IntPtr rightout, IntPtr upout){
+		public static void AngleVectors(IntPtr vector, IntPtr forwardout, IntPtr rightout, IntPtr upout){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1355,7 +1355,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorLength(IntPtr vector){
+		public static float VectorLength(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1366,7 +1366,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorLength2d(IntPtr vector){
+		public static float VectorLength2d(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1377,7 +1377,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorLengthSqr(IntPtr vector){
+		public static float VectorLengthSqr(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1388,7 +1388,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static float VectorLength2dSqr(IntPtr vector){
+		public static float VectorLength2dSqr(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1399,7 +1399,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static bool VectorIsZero(IntPtr vector){
+		public static bool VectorIsZero(IntPtr vector){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(vector);
@@ -1410,7 +1410,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetClientListening(IntPtr receiver, IntPtr sender, uint listen){
+		public static void SetClientListening(IntPtr receiver, IntPtr sender, uint listen){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(receiver);
@@ -1422,7 +1422,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static ListenOverride GetClientListening(IntPtr receiver, IntPtr sender){
+		public static ListenOverride GetClientListening(IntPtr receiver, IntPtr sender){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(receiver);
@@ -1434,7 +1434,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static void SetClientVoiceFlags(IntPtr client, uint flags){
+		public static void SetClientVoiceFlags(IntPtr client, uint flags){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(client);
@@ -1445,7 +1445,7 @@ namespace CounterStrikeSharp.API.Core
 			}
 		}
 
-        public static uint GetClientVoiceFlags(IntPtr client){
+		public static uint GetClientVoiceFlags(IntPtr client){
 			lock (ScriptContext.GlobalScriptContext.Lock) {
 			ScriptContext.GlobalScriptContext.Reset();
 			ScriptContext.GlobalScriptContext.Push(client);
@@ -1455,5 +1455,5 @@ namespace CounterStrikeSharp.API.Core
 			return (uint)ScriptContext.GlobalScriptContext.GetResult(typeof(uint));
 			}
 		}
-    }
+	}
 }

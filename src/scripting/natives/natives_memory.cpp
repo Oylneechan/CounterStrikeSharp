@@ -192,6 +192,8 @@ void* GetPatchAddress(ScriptContext& scriptContext)
 {
     auto patchName = scriptContext.GetArgument<const char*>(0);
     return globals::memoryManager.GetPatchAddress(patchName);
+}
+
 void RemoveAllNetworkVectorElements(ScriptContext& script_context)
 {
     auto vec = script_context.GetArgument<CUtlVector<CEntityHandle>*>(0);
