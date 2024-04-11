@@ -53,6 +53,7 @@ IFileSystem* fileSystem = nullptr;
 IServerGameDLL* serverGameDll = nullptr;
 IServerGameClients* serverGameClients = nullptr;
 INetworkServerService* networkServerService = nullptr;
+CSchemaSystem* schemaSystem = nullptr;
 IServerTools* serverTools = nullptr;
 IPhysics* physics = nullptr;
 IPhysicsCollision* physicsCollision = nullptr;
